@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(51, 51, 51, 0.831);
+        }
+        .hero-area{
+            width: 400px;
+            height: 300px;
+            background-color: tomato;
+            border-radius: 12px;
+        }
+        h1{
+            color: #FFF;
+            text-align: center;
+            padding-top: 30px;
+        }
+        p{
+            border: 2px solid #FFF;
+            text-align: center;
+            width: 50%;
+            height: 20px;
+            margin: 0 auto;
+            padding: 5px;
+            color: #FFF;
+        }
+        .inp{
+            padding-top: 40px;
+           display: flex;
+           justify-content: center;
+        }
+        input{
+            padding: 10px 10px;
+            background-color: #FFF;
+            color: tomato;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-area">
+            <h1 class="hero-text">
+                Password Generator
+            </h1>
+             <p class="pass-area"></p>
+             <div class="inp">
+                <input type="button" name="" id="" value="Generate">
+             </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('input')
+        const para = document.querySelector('p')
+
+    function generatePassword() {
+    var length = 8,
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+
+    btn.addEventListener('click',()=>{
+        para.innerHTML = generatePassword();
+    })
+    </script>
+</body>
+</html>
